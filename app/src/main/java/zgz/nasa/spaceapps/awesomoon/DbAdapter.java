@@ -2,7 +2,9 @@ package zgz.nasa.spaceapps.awesomoon;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
+import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -71,12 +73,12 @@ public class DbAdapter extends SQLiteRelacional {
         @Override
         public void onCreate(SQLiteDatabase db) {
 
-            db.execSQL(DATABASE_TABLE_INFORMACION);
-            db.execSQL(DATABASE_TABLE_MULTIMEDIA);
-            db.execSQL(DATABASE_TABLE_PREGUNTA);
-            db.execSQL(DATABASE_TABLE_PARTIDA);
-            db.execSQL(DATABASE_TABLE_CONTIENE);
-            db.execSQL(DATABASE_TABLE_MUESTRA);
+            db.execSQL(DATABASE_CREATE_INFORMACION);
+            db.execSQL(DATABASE_CREATE_MULTIMEDIA);
+            db.execSQL(DATABASE_CREATE_PREGUNTA);
+            db.execSQL(DATABASE_CREATE_PARTIDA);
+            db.execSQL(DATABASE_CREATE_CONTIENE);
+            db.execSQL(DATABASE_CREATE_MUESTRA);
         }
 
         @Override
@@ -96,14 +98,21 @@ public class DbAdapter extends SQLiteRelacional {
             return mDb.insert(DATABASE_TABLE_INFORMACION, null, initialValues);
     }
 
-    public long insertMultimedia(int id, String tipo, String uri, int duracion){
-        ContentValues initialValues = new ContentValues();
-        initialValues.put(KEY_IDMULTI,id);
-        initialValues.put(Tipo, tipo);
-        initialValues.put(URI, uri);
-        initialValues.put(Duracion, duracion);
-
-        return mDb.insert(DATABASE_TABLE_MULTIMEDIA, null, initialValues);
+    public long insertMultimedia(String tipo, String uri, int duracion){
+        if(tipo==null || uri ==null){
+            Log.w("InsertMultimediaError","tipo:"+tipo+" uri:"+uri);
+            return -1;
+        }else {
+            ContentValues initialValues = new ContentValues();
+            initialValues.put(Tipo, tipo);
+            initialValues.put(URI, uri);
+            initialValues.put(Duracion, duracion);
+            try {
+                return mDb.insert(DATABASE_TABLE_MULTIMEDIA, null, initialValues);
+            }catch (SQLiteConstraintException e){
+                return 0;
+            }
+        }
     }
 
     public long insertPregunta(int id, String texto, String correcta, String error1, String error2, String error3,
@@ -120,7 +129,10 @@ public class DbAdapter extends SQLiteRelacional {
 
         return mDb.insert(DATABASE_TABLE_PREGUNTA, null, initialValues);
     }
-
+    public Cursor getAllImages(){
+        return mDb.query(DATABASE_TABLE_MULTIMEDIA,new String[]{"*"},Tipo+"=?",new String[]{"IMAGE"},null,null,null);
+    }
+/*
     public long insertPartida(int id, int puntuacion, int//OISBIWUVECVW fecha,String juego, int numero){
         ContentValues initialValues = new ContentValues();
         initialValues.put(KEY_IDPART,id);
@@ -130,6 +142,7 @@ public class DbAdapter extends SQLiteRelacional {
 
         return mDb.insert(DATABASE_TABLE_PARTIDA, null, initialValues);
     }
+    */
     /*
     public long insertNewPlaylist(String nombrePlaylist){
         if(nombrePlaylist.length()>0){

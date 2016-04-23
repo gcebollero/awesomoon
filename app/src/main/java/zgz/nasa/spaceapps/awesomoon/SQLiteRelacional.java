@@ -41,17 +41,17 @@ public class SQLiteRelacional {
      * Database creation sql statement
      */
     protected static final String DATABASE_CREATE_INFORMACION=
-            "create table " + DATABASE_TABLE_INFORMACION + " (" + KEY_IDINFO + "INTEGER PRIMARY KEY , "+ Titulo +" TEXT NOT NULL , "+
+            "create table " + DATABASE_TABLE_INFORMACION + " (" + KEY_IDINFO + " INTEGER PRIMARY KEY , "+ Titulo +" TEXT NOT NULL , "+
             Cuerpo + " TEXT NOT NULL);";
     protected static final String DATABASE_CREATE_MULTIMEDIA =
-            "create table " + DATABASE_TABLE_MULTIMEDIA + " ( "+ KEY_IDMULTI + "INTEGER PRIMARY KEY, "+ Tipo + " TEXT NOT NULL," +
-             URI +" TEXT NOT NULL , " + Duracion + " INTEGER NOT NULL );";
+            "create table " + DATABASE_TABLE_MULTIMEDIA + " ( "+ Tipo + " TEXT NOT NULL," +
+             URI +" TEXT PRIMARY KEY , " + Duracion + " INTEGER NOT NULL );";
     protected static final String DATABASE_CREATE_PREGUNTA =
-            "create table " + DATABASE_TABLE_PREGUNTA + " ("+KEY_IDPREG + "INTEGER PRIMARY KEY, " + Texto + " TEXT NOT NULL," +
+            "create table " + DATABASE_TABLE_PREGUNTA + " ("+KEY_IDPREG + " INTEGER PRIMARY KEY, " + Texto + " TEXT NOT NULL," +
             Correcta + " TEXT NOT NULL, " + Error1 + " TEXT NOT NULL, " + Error2 + " TEXT NOT NULL, " + Error3 + " TEXT NOT NULL," +
             Error4 + " TEXT, "  + Error5 + " TEXT );";
     protected static final String DATABASE_CREATE_PARTIDA =
-            "create table "+ DATABASE_TABLE_PARTIDA + " (" + KEY_IDPART + "INTEGER PRIMARY KEY, " + Puntuacion + " INTEGER NOT NULL, " +
+            "create table "+ DATABASE_TABLE_PARTIDA + " (" + KEY_IDPART + " INTEGER PRIMARY KEY, " + Puntuacion + " INTEGER NOT NULL, " +
             Fecha + " DATE NOT NULL, " + Juego + " TEXT NOT NULL, " + Numero + " INTEGER NOT NULL );";
     protected static final String DATABASE_CREATE_CONTIENE =
             "create table "+ DATABASE_TABLE_CONTIENE + " (PREGUNTA_ID INTEGER PRIMARY KEY, MULTIMEDIA_ID INTEGER NOT NULL, " +
