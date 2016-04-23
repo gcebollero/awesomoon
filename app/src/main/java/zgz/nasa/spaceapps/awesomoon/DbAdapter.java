@@ -2,12 +2,9 @@ package zgz.nasa.spaceapps.awesomoon;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.database.sqlite.SQLiteQueryBuilder;
-import android.database.sqlite.SQLiteStatement;
 import android.util.Log;
 
 
@@ -53,7 +50,7 @@ public class DbAdapter extends SQLiteRelacional {
         mDbHelper.close();
     }
 
-   public boolean updateFavorite(String path, boolean isFavorite) {
+   /*public boolean updateFavorite(String path, boolean isFavorite) {
         ContentValues args = new ContentValues();
         String value;
         if(isFavorite){
@@ -63,7 +60,7 @@ public class DbAdapter extends SQLiteRelacional {
         }
         args.put(KEY_FAVORITO, value);
         return mDb.update(DATABASE_TABLE_CANCION, args, KEY_RUTA + " =?", new String[]{path}) > 0;
-    }
+    }*/
 
     private static class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -74,33 +71,12 @@ public class DbAdapter extends SQLiteRelacional {
         @Override
         public void onCreate(SQLiteDatabase db) {
 
-            db.execSQL(DATABASE_CREATE_CANCION);
-            db.execSQL(DATABASE_CREATE_PLAYLIST);
-            db.execSQL(DATABASE_CREATE_PERTENECE);
-            db.execSQL(INSERT_PLAYLIST_TODAS);
-            db.execSQL(INSERT_PLAYLIST_FAVORITOS);
-            db.execSQL(trigger_delete_duracion);
-            db.execSQL(trigger_delete_numero);
-            db.execSQL(trigger_insert_duracion);
-            db.execSQL(trigger_insert_numero);
-            db.execSQL(trigger_insert_cancion_numero);
-            db.execSQL(trigger_delete_cancion_numero);
-            db.execSQL(trigger_insert_cancion_duracion);
-            db.execSQL(trigger_delete_cancion_duracion);
-            //db.execSQL(trigger_fav_numero);
-            //db.execSQL(trigger_fav_duracion);
-            Log.d("SQLite", DATABASE_CREATE_CANCION);
-            Log.d("SQLite", DATABASE_CREATE_PLAYLIST);
-            Log.d("SQLite", DATABASE_CREATE_PERTENECE);
-            Log.d("SQLite", INSERT_PLAYLIST_TODAS);
-            Log.d("SQLite", INSERT_PLAYLIST_FAVORITOS);
-            Log.d("SQLite",trigger_delete_duracion);
-            Log.d("SQLite",trigger_delete_numero);
-            Log.d("SQLite",trigger_insert_duracion);
-            Log.d("SQLite",trigger_insert_numero);
-
-
-            Log.d("SQLite", "DATABASES CREATED");
+            db.execSQL(DATABASE_TABLE_INFORMACION);
+            db.execSQL(DATABASE_TABLE_MULTIMEDIA);
+            db.execSQL(DATABASE_TABLE_PREGUNTA);
+            db.execSQL(DATABASE_TABLE_PARTIDA);
+            db.execSQL(DATABASE_TABLE_CONTIENE);
+            db.execSQL(DATABASE_TABLE_MUESTRA);
         }
 
         @Override
@@ -111,21 +87,15 @@ public class DbAdapter extends SQLiteRelacional {
             onCreate(db);
         }
     }
-        public long insertCancion(String path, String titulo, int favoritos,int duracion,int reproducciones){
-            if(path.length()>0 && titulo.length()>0 && (favoritos==0 || favoritos==1) && duracion>0 && reproducciones>=0){
+        public long insertInformacion(int id, String titulo, String cuerpo){
                 ContentValues initialValues = new ContentValues();
-                initialValues.put(KEY_RUTA,path);
-                initialValues.put(KEY_TITULO, titulo);
-                initialValues.put(KEY_FAVORITO,favoritos);
-                initialValues.put(KEY_DURACION,duracion);
-                initialValues.put(KEY_REPRODUCCIONES,reproducciones);
+                initialValues.put(KEY_IDINFO,id);
+                initialValues.put(Titulo, titulo);
+                initialValues.put(Cuerpo,cuerpo);
 
-                return mDb.insert(DATABASE_TABLE_CANCION, null, initialValues);
-            }else{
-                Log.d(TAG,"Insercción erronea ("+path+","+titulo+","+favoritos+","+duracion+","+reproducciones);
-                return -1;
-            }
+                return mDb.insert(DATABASE_TABLE_INFORMACION, null, initialValues);
         }
+    /*
     public long insertNewPlaylist(String nombrePlaylist){
         if(nombrePlaylist.length()>0){
             ContentValues initialValues = new ContentValues();
@@ -252,7 +222,7 @@ public class DbAdapter extends SQLiteRelacional {
     public  Cursor lista_ryta_favoritos(){
         return mDb.query(DATABASE_TABLE_CANCION, new String[]{KEY_RUTA},KEY_FAVORITO+"="+1,null,null,null,KEY_RUTA);
     }
-    */
+
 
 
 
@@ -373,7 +343,7 @@ public class DbAdapter extends SQLiteRelacional {
 
 
 
-    }*/
+    }
     public void incrementarReproduccionCancion(String ruta){
         Cursor c = mDb.query(DATABASE_TABLE_CANCION, new String[]{KEY_REPRODUCCIONES} ,KEY_RUTA+"= ?",new String[]{ruta},null,null,null,null);
 
@@ -387,7 +357,7 @@ public class DbAdapter extends SQLiteRelacional {
 
 
 
-    }
+    }*/
 
 
 }
