@@ -1,4 +1,4 @@
-package proyectosoftware.projectsound.CustomAdapters;
+package zgz.nasa.spaceapps.awesomoon;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -10,8 +10,7 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.database.sqlite.SQLiteStatement;
 import android.util.Log;
 
-import proyectosoftware.projectsound.SQLiteRelacional;
-import proyectosoftware.projectsound.Tipos.Playlist;
+
 
 /**
  * Created by Guillermo on 9/03/16.
