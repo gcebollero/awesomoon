@@ -24,6 +24,14 @@
 		"URI": "http://solarsystem.nasa.gov/images/galleries/GPN-2000-001117_732.jpg",
 		"Duracion": -1
         }, {
+               "Tipo": "IMAGE",
+		"URI": "https://www.nasa.gov/sites/default/files/707429main_lunar_eclipse_lrg.jpg.jpg",
+		"Duracion": -1
+        }, {
+               "Tipo": "IMAGE",
+		"URI": "http://www.nasa.gov/sites/default/files/thumbnails/image/christmas2015fullmoon.jpg.jpg",
+		"Duracion": -1
+        }, {
                 "Tipo": "IMAGE",
 		"URI": "http://solarsystem.nasa.gov/images/galleries/GPN-2000-001139_732.jpg",
 		"Duracion": -1
