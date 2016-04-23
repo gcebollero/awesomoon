@@ -20,9 +20,12 @@
 		"Cuerpo": "Cuerpo informacion"
 	}],
 	"MULTIMEDIA": [{
-		"ID": 1,
 		"Tipo": "IMAGE",
-		"URI": "http",
+		"URI": "http://solarsystem.nasa.gov/images/galleries/GPN-2000-001117_732.jpg",
+		"Duracion": -1
+        }, {
+                "Tipo": "IMAGE",
+		"URI": "http://solarsystem.nasa.gov/images/galleries/GPN-2000-001139_732.jpg",
 		"Duracion": -1
 	}]
 }
