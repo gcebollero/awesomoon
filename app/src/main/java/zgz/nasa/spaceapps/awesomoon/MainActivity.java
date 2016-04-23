@@ -1,11 +1,8 @@
 package zgz.nasa.spaceapps.awesomoon;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -61,6 +58,8 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            UpdateDB dbupdate = new UpdateDB(getApplicationContext());
+            dbupdate.init();
             return true;
         }
 
@@ -76,6 +75,7 @@ public class MainActivity extends AppCompatActivity
         Bundle args = new Bundle();
         switch(id){
             case R.id.nav_galeria:
+                f = new GaleryFragment();
                 break;
             case R.id.nav_informacion:
                 break;
