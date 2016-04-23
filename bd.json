@@ -1,0 +1,28 @@
+{
+	"PREGUNTA": [{
+		"ID": 1,
+		"Texto": "Year first moon landing",
+		"Correcta": "1969",
+		"Error1": "2005",
+		"Error2": "1980",
+		"Error3": "1999"
+	}, {
+		"ID": 2,
+		"Texto": "Starship moon landing",
+		"Correcta": "Apollo 1",
+		"Error1": "Apollo 3",
+		"Error2": "MoonLander",
+		"Error3": "NASA"
+	}],
+	"INFORMACION": [{
+		"ID": 1,
+		"Titulo": "Titulo informacion",
+		"Cuerpo": "Cuerpo informacion"
+	}],
+	"MULTIMEDIA": [{
+		"ID": 1,
+		"Tipo": "IMAGE",
+		"URI": "http",
+		"Duracion": -1
+	}]
+}
