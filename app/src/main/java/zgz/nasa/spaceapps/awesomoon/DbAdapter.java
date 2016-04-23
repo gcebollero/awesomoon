@@ -87,14 +87,49 @@ public class DbAdapter extends SQLiteRelacional {
             onCreate(db);
         }
     }
-        public long insertInformacion(int id, String titulo, String cuerpo){
-                ContentValues initialValues = new ContentValues();
-                initialValues.put(KEY_IDINFO,id);
-                initialValues.put(Titulo, titulo);
-                initialValues.put(Cuerpo,cuerpo);
+    public long insertInformacion(int id, String titulo, String cuerpo){
+            ContentValues initialValues = new ContentValues();
+            initialValues.put(KEY_IDINFO,id);
+            initialValues.put(Titulo, titulo);
+            initialValues.put(Cuerpo,cuerpo);
 
-                return mDb.insert(DATABASE_TABLE_INFORMACION, null, initialValues);
-        }
+            return mDb.insert(DATABASE_TABLE_INFORMACION, null, initialValues);
+    }
+
+    public long insertMultimedia(int id, String tipo, String uri, int duracion){
+        ContentValues initialValues = new ContentValues();
+        initialValues.put(KEY_IDMULTI,id);
+        initialValues.put(Tipo, tipo);
+        initialValues.put(URI, uri);
+        initialValues.put(Duracion, duracion);
+
+        return mDb.insert(DATABASE_TABLE_MULTIMEDIA, null, initialValues);
+    }
+
+    public long insertPregunta(int id, String texto, String correcta, String error1, String error2, String error3,
+                               String error4, String error5){
+        ContentValues initialValues = new ContentValues();
+        initialValues.put(KEY_IDPREG,id);
+        initialValues.put(Texto, texto);
+        initialValues.put(Correcta,correcta);
+        initialValues.put(Error1, error1);
+        initialValues.put(Error2, error2);
+        initialValues.put(Error3, error3);
+        initialValues.put(Error4, error4);
+        initialValues.put(Error5, error5);
+
+        return mDb.insert(DATABASE_TABLE_PREGUNTA, null, initialValues);
+    }
+
+    public long insertPartida(int id, int puntuacion, int//OISBIWUVECVW fecha,String juego, int numero){
+        ContentValues initialValues = new ContentValues();
+        initialValues.put(KEY_IDPART,id);
+        initialValues.put(, tipo);
+        initialValues.put(URI, uri);
+        initialValues.put(Duracion, duracion);
+
+        return mDb.insert(DATABASE_TABLE_PARTIDA, null, initialValues);
+    }
     /*
     public long insertNewPlaylist(String nombrePlaylist){
         if(nombrePlaylist.length()>0){
