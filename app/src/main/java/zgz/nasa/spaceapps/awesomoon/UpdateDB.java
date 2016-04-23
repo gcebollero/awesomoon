@@ -2,6 +2,7 @@ package zgz.nasa.spaceapps.awesomoon;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.database.sqlite.SQLiteConstraintException;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -20,17 +21,16 @@ import java.io.InputStreamReader;
  * Created by novales35 on 23/04/16.
  */
 public class UpdateDB {
-    private Context c;
     private DbAdapter db;
 
-    public UpdateDB(Context c){
-        this.c=c;
-        this.db = new DbAdapter(c);
+    public UpdateDB(){
     }
-    public void init(){
+    public void init(Context context){
+        db = new DbAdapter(context);
         new DownloadUpdates().execute("https://raw.githubusercontent.com/novales35/awesomoon/master/bd.json");
     }
     private void parseJson(String json){
+        if(!db.isOpen()) db.open();
         try {
             JSONObject updates = new JSONObject(json);
             JSONArray preguntas = updates.getJSONArray(db.DATABASE_TABLE_PREGUNTA);
@@ -57,11 +57,12 @@ public class UpdateDB {
             JSONArray multimedia = updates.getJSONArray(db.DATABASE_TABLE_MULTIMEDIA);
             for(int i = 0; i < multimedia.length();i++){
                 JSONObject j = multimedia.getJSONObject(i);
-                int id = j.getInt(db.KEY_IDMULTI);
                 String tipo = j.getString(db.Tipo);
                 String uri = j.getString(db.URI);
-                String dur = j.getString(db.Duracion);
-                //todo insert
+                int dur = j.getInt(db.Duracion);
+                db.insertMultimedia(tipo, uri, dur);
+
+                Log.d("updater","inserted multimedia item");
             }
             multimedia=null;
         } catch (JSONException e) {
@@ -96,7 +97,6 @@ public class UpdateDB {
 
         protected void onPostExecute(String jsonResult) {
             parseJson(jsonResult);
-            Toast.makeText(c,"Application data updated!",Toast.LENGTH_LONG).show();
         }
     }
 }

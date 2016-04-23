@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        DbAdapter mDb = new DbAdapter(getApplicationContext());
+        mDb.open();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -58,8 +60,8 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            UpdateDB dbupdate = new UpdateDB(getApplicationContext());
-            dbupdate.init();
+            UpdateDB dbupdate = new UpdateDB();
+            dbupdate.init(getApplicationContext());
             return true;
         }
 
