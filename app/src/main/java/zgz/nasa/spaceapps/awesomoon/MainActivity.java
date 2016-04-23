@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_informacion:
                 break;
             case R.id.nav_juegos:
+                f = new QuestionFragment();
                 break;
             case R.id.nav_mapa:
                 f = new MapFragment();
