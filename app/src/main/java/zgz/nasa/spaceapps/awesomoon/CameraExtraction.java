@@ -108,9 +108,10 @@ public class CameraExtraction extends ViewGroup implements SurfaceHolder.Callbac
 
             int previewWidth = width;
             int previewHeight = height;
+
             if (mPreviewSize != null) {
-                previewWidth = mPreviewSize.width;
-                previewHeight = mPreviewSize.height;
+                previewWidth = mPreviewSize.height;
+                previewHeight = mPreviewSize.width;
             }
 
             // Center the child SurfaceView within the parent.
