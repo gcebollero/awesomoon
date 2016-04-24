@@ -39,15 +39,13 @@ public class InfoContentFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_info_list, container, false);
+        View view = inflater.inflate(R.layout.activity_info_content, container, false);
 
 //        if(!mdb.isOpen()){
 //            mdb.open();
 //        }
 //        String titulo = String.valueOf(mdb.getTitleInformation(ARG_INFO));
-//        getActivity().setTitle(titulo);
-
-        getActivity().setTitle("HOLA MUNDO");
+        getActivity().setTitle("titulo");
 
         NavigationView navigationView = (NavigationView) getActivity().findViewById(R.id.nav_view);
         navigationView.setCheckedItem(R.id.nav_informacion);
@@ -67,32 +65,13 @@ public class InfoContentFragment extends Fragment {
 
         //Obtener todos los datos sobre las playlist existentes
         mdb = new DbAdapter(getContext());
-        InfoFactory plf = new InfoFactory(mdb);
-        dates_info = plf.getAllInformation();
-        //Creacion de lista en el listview
-        lista = (ListView) view.findViewById(R.id.listview_playlist);
+        TextView body_info = (TextView) view.findViewById(R.id.textView_info_content);
 
-        lista.setAdapter(adaptador = new InfoAdapter(view.getContext(), R.layout.entry_info_list, (ArrayList<?>) dates_info) {
-
-            /*
-            * COMPRUEBA QUE EXISTEN LOS ITEMS CORRECTOS ANTES DE INSERTAR CUALQUIER ELEMENTO
-            * Una vez realizada la comprobacion inserta la informacion
-            */
-            @Override
-            public void onEntrada(Object entrada, View view) {
-                if (entrada != null) {
-
-                    ImageView imagen_info = (ImageView) view.findViewById(R.id.imgeView_img_content);
-                    if (imagen_info != null) {
-                        //imagen_info.setImageResource(((Information) entrada).getIdImageInfo());
-                    }
-                    TextView body_info = (TextView) view.findViewById(R.id.textView_info_content);
-                    if (body_info != null)
-                        body_info.setText(((Information) entrada).getBodyInfo());
-                }
-            }
-
-        });
+        if(!mdb.isOpen()){
+            mdb.open();
+        }
+        body_info.setText((CharSequence) mdb.getBodyInformation(ARG_INFO));
+        
     }
 
 
