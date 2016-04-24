@@ -60,47 +60,58 @@
 	"INFORMACION": [{
 		"ID": 1,
 		"Titulo": "First Maned Moon Landing",
-		"Cuerpo": "The first maned Moon landing was in 1969, by the spaceship Apolo 11. The crew was formed by Neil A.Armstrong, Edwin E.Aldrin Jr.and Michael Collins.When Armstrong stepped on the Moon he said one of the most famous quotes of the history of the humanity: 'That is one small step for man, one giant leap for mankind'."
+		"Cuerpo": "The first maned Moon landing was in 1969, by the spaceship Apolo 11. The crew was formed by Neil A.Armstrong, Edwin E.Aldrin Jr.and Michael Collins.When Armstrong stepped on the Moon he said one of the most famous quotes of the history of the humanity: 'That is one small step for man, one giant leap for mankind'.",
+		"INFOURI": http://solarsystem.nasa.gov/images/galleries/GPN-2000-001117_732.jpg
 	}, {
 		"ID": 2,
 		"Titulo": "Moon and literature",
-		"Cuerpo": "The Moon has appeared in a lot of famous stories, for example, Don Quijote of the Mancha was called The Knight of the White Moon."
+		"Cuerpo": "The Moon has appeared in a lot of famous stories, for example, Don Quijote of the Mancha was called The Knight of the White Moon.",
+		"INFOURI": http://solarsystem.nasa.gov/images/galleries/GPN-2000-001117_732.jpg
 	}, {
 		"ID": 3,
 		"Titulo": "Moon's age",
-		"Cuerpo": "The Moon was born 4.530.000.000 years ago, she keeps herself young, uh?."
+		"Cuerpo": "The Moon was born 4.530.000.000 years ago, she keeps herself young, uh?.",
+		"INFOURI": http://solarsystem.nasa.gov/images/galleries/GPN-2000-001117_732.jpg
 	}, {
 		"ID": 4,
 		"Titulo": "A day on the Moon",
-		"Cuerpo": "A day on the Moon lasts almost a month on the Earth, exactly 27.322 Earth days"
+		"Cuerpo": "A day on the Moon lasts almost a month on the Earth, exactly 27.322 Earth days",
+		"INFOURI": http://solarsystem.nasa.gov/images/galleries/GPN-2000-001117_732.jpg
 	}, {
 		"ID": 5,
 		"Titulo": "The distance to the Moon",
-		"Cuerpo": "Have you ever think in travelling to the Moon? Moon is approximately 405,000 kilometers far from the Earth. It is like 10 times the circumference of Earth. Do you still want to travel to the Moon?"
+		"Cuerpo": "Have you ever think in travelling to the Moon? Moon is approximately 405,000 kilometers far from the Earth. It is like 10 times the circumference of Earth. Do you still want to travel to the Moon?",
+		"INFOURI": http://solarsystem.nasa.gov/images/galleries/GPN-2000-001117_732.jpg
 	}, {
 		"ID": 6,
 		"Titulo": "The circumference of the Moon",
-		"Cuerpo": "The circumference of the Moon is 10,917 km. That is equivalent to 0.272719 times the circumference of the Earth, 109.170 football camps and 21.940 Olympic swimming pools."
+		"Cuerpo": "The circumference of the Moon is 10,917 km. That is equivalent to 0.272719 times the circumference of the Earth, 109.170 football camps and 21.940 Olympic swimming pools.",
+		"INFOURI": http://solarsystem.nasa.gov/images/galleries/GPN-2000-001117_732.jpg
 	}, {
 		"ID": 7,
 		"Titulo": "Moon's weight",
-		"Cuerpo": "The weight of the Moon is 73.476.730.924.573.500.000.000 kg. That is equivalent to 0.0123 times the weight of the Earth, 13.672.633.220.054.614.812 African elephants and 1,224,612,182,076,225,000 Egipcian pyramid stones."
+		"Cuerpo": "The weight of the Moon is 73.476.730.924.573.500.000.000 kg. That is equivalent to 0.0123 times the weight of the Earth, 13.672.633.220.054.614.812 African elephants and 1,224,612,182,076,225,000 Egipcian pyramid stones.",
+		"INFOURI": http://solarsystem.nasa.gov/images/galleries/GPN-2000-001117_732.jpg
 	}],
 	"MULTIMEDIA": [{
 		"Tipo": "IMAGE",
 		"URI": "http://solarsystem.nasa.gov/images/galleries/GPN-2000-001117_732.jpg",
-		"Duracion": -1
+		"Duracion": -1,
+		"TextoMulti":"Esta foto es muy bonicaaaa"
 	}, {
 		"Tipo": "IMAGE",
 		"URI": "https://www.nasa.gov/sites/default/files/707429main_lunar_eclipse_lrg.jpg",
-		"Duracion": -1
+		"Duracion": -1,
+		"TextoMulti":"Esta foto es muy bonicaaaa"
 	}, {
 		"Tipo": "IMAGE",
 		"URI": "http://www.nasa.gov/sites/default/files/thumbnails/image/christmas2015fullmoon.jpg",
-		"Duracion": -1
+		"Duracion": -1,
+		"TextoMulti":"Esta foto es muy bonicaaaa"
 	}, {
 		"Tipo": "IMAGE",
 		"URI": "http://solarsystem.nasa.gov/images/galleries/GPN-2000-001139_732.jpg",
-		"Duracion": -1
+		"Duracion": -1,
+		"TextoMulti":"Esta foto es muy bonicaaaa"
 	}]
 }

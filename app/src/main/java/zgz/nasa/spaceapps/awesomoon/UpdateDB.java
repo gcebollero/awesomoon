@@ -47,7 +47,8 @@ public class UpdateDB {
                 int id = j.getInt(db.KEY_IDINFO);
                 String titulo = j.getString(db.Titulo);
                 String cuerpo = j.getString(db.Cuerpo);
-                db.insertInformacion(id,titulo,cuerpo);
+                String uriinfo = j.getString(db.INFOURI);
+                db.insertInformacion(id,titulo,cuerpo,uriinfo);
             }
             informacion=null;
             JSONArray multimedia = updates.getJSONArray(db.DATABASE_TABLE_MULTIMEDIA);
@@ -56,7 +57,8 @@ public class UpdateDB {
                 String tipo = j.getString(db.Tipo);
                 String uri = j.getString(db.URI);
                 int dur = j.getInt(db.Duracion);
-                db.insertMultimedia(tipo, uri, dur);
+                String infomulti = j.getString(db.TextoMulti);
+                db.insertMultimedia(tipo, uri, dur,infomulti);
             }
             multimedia=null;
         } catch (JSONException e) {

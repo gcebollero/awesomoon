@@ -19,9 +19,11 @@ public class SQLiteRelacional {
     public static final String Titulo="Titulo"; //TITULO DE INFO.
     public static final String Cuerpo="Cuerpo"; //CUERPO DE INFO.
     public static final String Tipo ="Tipo";    //TIPO MULTIMEDIA
+    public static final String INFOURI="URI";   //Multimedia de la info.
     public static final String URI="URI";
     public static final String Duracion ="Duracion";
     public static final String Texto = "Texto";
+    public static final String TextoMulti = "Texto"; //Texto multimedia
     public static final String Correcta = "Correcta";
     public static final String Error1 = "Error1";
     public static final String Error2 = "Error2";
@@ -42,10 +44,10 @@ public class SQLiteRelacional {
      */
     protected static final String DATABASE_CREATE_INFORMACION=
             "create table " + DATABASE_TABLE_INFORMACION + " (" + KEY_IDINFO + " INTEGER PRIMARY KEY , "+ Titulo +" TEXT NOT NULL , "+
-            Cuerpo + " TEXT NOT NULL);";
+                    INFOURI+ "TEXT , " + Cuerpo + " TEXT NOT NULL);";
     protected static final String DATABASE_CREATE_MULTIMEDIA =
-            "create table " + DATABASE_TABLE_MULTIMEDIA + " ( "+ Tipo + " TEXT NOT NULL," +
-             URI +" TEXT PRIMARY KEY , " + Duracion + " INTEGER NOT NULL );";
+            "create table " + DATABASE_TABLE_MULTIMEDIA + " ( "+ KEY_IDMULTI + " INTEGER PRIMARY KEY, "+ Tipo + " TEXT NOT NULL," +
+             URI +" TEXT PRIMARY KEY , " +TextoMulti + " TEXT , " + Duracion + " INTEGER NOT NULL );";
     protected static final String DATABASE_CREATE_PREGUNTA =
             "create table " + DATABASE_TABLE_PREGUNTA + " ("+KEY_IDPREG + " INTEGER PRIMARY KEY, " + Texto + " TEXT NOT NULL," +
             Correcta + " TEXT NOT NULL, " + Error1 + " TEXT NOT NULL, " + Error2 + " TEXT NOT NULL, " + Error3 + " TEXT NOT NULL," +
