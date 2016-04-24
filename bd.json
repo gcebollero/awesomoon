@@ -1,38 +1,85 @@
 {
 	"PREGUNTA": [{
 		"ID": 1,
-		"Texto": "Year first moon landing",
+		"Texto": "When was the first maned moon landing?",
 		"Correcta": "1969",
 		"Error1": "2005",
 		"Error2": "1980",
 		"Error3": "1999"
 	}, {
 		"ID": 2,
-		"Texto": "Starship moon landing",
-		"Correcta": "Apollo 1",
+		"Texto": "What was the name of the first maned starship which landed on the moon?",
+		"Correcta": "Apollo 11",
 		"Error1": "Apollo 3",
 		"Error2": "MoonLander",
 		"Error3": "NASA"
+	}, {
+		"ID": 3,
+		"Texto": "Who was the knight of the white moon?",
+		"Correcta": "Don Quijote",
+		"Error1": "Batman",
+		"Error2": "Hamlet",
+		"Error3": "Neil Armstrong"
+	}, {
+		"ID": 4,
+		"Texto": "what is the age of the Moon?",
+		"Correcta": "4.530.000.000 years",
+		"Error1": "40 years",
+		"Error2": "65.000.000.000 years",
+		"Error3": "It was created yesterday"
+	}, {
+		"ID": 5,
+		"Texto": "How long is a day at the Moon?",
+		"Correcta": "27.322 Earth Days",
+		"Error1": "1 Earth Day",
+		"Error2": "1 Earth Year",
+		"Error3": "365'8 Earth Days"
+	}, {
+		"ID": 6,
+		"Texto": "How far is the Moon from us?",
+		"Correcta": "Approximately 405.000 kilometers",
+		"Error1": "A few meters",
+		"Error2": "More than 1.000.000.000 kilometers",
+		"Error3": "So far we cannot see it"
+	}, {
+		"ID": 7,
+		"Texto": "How many football camps are the Moon's circumference?",
+		"Correcta": "109.170 football camps",
+		"Error1": "1 football camp",
+		"Error2": "A football camp is bigger than Moon's circumference",
+		"Error3": "15.236.934 football camps"
+	}, {
+		"ID": 8,
+		"Texto": "How many olympic swimming pools are the Moon's circumference?",
+		"Correcta": "21.940 olympic swimming pools",
+		"Error1": "100.000 olympic swimming pools",
+		"Error2": "0.5 olympic swimming pools",
+		"Error3": "23 olympic swimming pools"
 	}],
+
 	"INFORMACION": [{
 		"ID": 1,
-		"Titulo": "Titulo informacion",
-		"Cuerpo": "Cuerpo informacion"
+		"Titulo": "First Maned Moon Landing",
+		"Cuerpo": "The first maned Moon landing was in 1969, by the spaceship Apolo 11. The crew was formed by Neil A.Armstrong, Edwin E.Aldrin Jr.and Michael Collins.When Armstrong stepped on the Moon he said one of the most famous quotes of the history of the humanity: 'That is one small step for man, one giant leap for mankind'."
+	}, {
+		"ID": 2,
+		"Titulo": "Moon and literature",
+		"Cuerpo": "The Moon has appeared in a lot "
 	}],
 	"MULTIMEDIA": [{
 		"Tipo": "IMAGE",
 		"URI": "http://solarsystem.nasa.gov/images/galleries/GPN-2000-001117_732.jpg",
-		"Duracion": -1
-        }, {
-               "Tipo": "IMAGE",
+		"Duracion": null
+	}, {
+		"Tipo": "IMAGE",
 		"URI": "https://www.nasa.gov/sites/default/files/707429main_lunar_eclipse_lrg.jpg",
 		"Duracion": -1
-        }, {
-               "Tipo": "IMAGE",
+	}, {
+		"Tipo": "IMAGE",
 		"URI": "http://www.nasa.gov/sites/default/files/thumbnails/image/christmas2015fullmoon.jpg",
 		"Duracion": -1
-        }, {
-                "Tipo": "IMAGE",
+	}, {
+		"Tipo": "IMAGE",
 		"URI": "http://solarsystem.nasa.gov/images/galleries/GPN-2000-001139_732.jpg",
 		"Duracion": -1
 	}]
