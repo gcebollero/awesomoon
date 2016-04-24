@@ -1,13 +1,7 @@
 package zgz.nasa.spaceapps.awesomoon;
 
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.database.sqlite.SQLiteConstraintException;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.util.Log;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -16,6 +10,8 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+
+import zgz.nasa.spaceapps.awesomoon.CustomAdapter.DbAdapter;
 
 /**
  * Created by novales35 on 23/04/16.

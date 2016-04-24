@@ -1,13 +1,12 @@
 package zgz.nasa.spaceapps.awesomoon.Factorys;
 
 import android.database.Cursor;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import zgz.nasa.spaceapps.awesomoon.DbAdapter;
+import zgz.nasa.spaceapps.awesomoon.CustomAdapter.DbAdapter;
 import zgz.nasa.spaceapps.awesomoon.Tipes.Question;
 
 /**

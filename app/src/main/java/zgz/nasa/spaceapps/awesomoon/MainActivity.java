@@ -13,6 +13,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import zgz.nasa.spaceapps.awesomoon.CustomAdapter.DbAdapter;
+import zgz.nasa.spaceapps.awesomoon.Fragments.InformationListFragment;
+import zgz.nasa.spaceapps.awesomoon.Tipes.Information;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -81,6 +85,7 @@ public class MainActivity extends AppCompatActivity
                 f = new GaleryFragment();
                 break;
             case R.id.nav_informacion:
+                f = new InformationListFragment();
                 break;
             case R.id.nav_juegos:
                 f = new QuestionFragment();

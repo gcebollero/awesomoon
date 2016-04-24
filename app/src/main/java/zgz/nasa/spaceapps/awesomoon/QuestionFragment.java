@@ -17,6 +17,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Random;
 
+import zgz.nasa.spaceapps.awesomoon.CustomAdapter.DbAdapter;
 import zgz.nasa.spaceapps.awesomoon.Factorys.QuestionFactory;
 import zgz.nasa.spaceapps.awesomoon.Tipes.Question;
 

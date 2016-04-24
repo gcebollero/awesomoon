@@ -1,5 +1,6 @@
 package zgz.nasa.spaceapps.awesomoon.Factorys;
 
+import zgz.nasa.spaceapps.awesomoon.CustomAdapter.DbAdapter;
 import zgz.nasa.spaceapps.awesomoon.Tipes.Information;
 
 import android.database.Cursor;
@@ -13,14 +14,14 @@ import java.util.List;
  */
 public class InfoFactory {
 
-    //private DbAdapter db;
+    private DbAdapter db;
 
     /**
      * Constructor de la clase
      * @param db adaptador de la base de datos
      */
-    public InfoFactory(/*DbAdapter db*/){
-        //this.db = db;
+    public InfoFactory(DbAdapter db){
+        this.db = db;
     }
 
     private List<Information> extractInformation(Cursor mCursor){
@@ -31,7 +32,6 @@ public class InfoFactory {
                 //Para cada fila de la base de datos, obtenemos todos los campos
                 String titleInfo; //= mCursor.getString(mCursor.getColumnIndex(DbAdapter.KEY_NOMBRE_PLAYLIST));
                 String imgInfo; //= mCursor.getString(mCursor.getColumnIndex(DbAdapter.KEY_NUM_CANCIONES));
-
 
             } while (mCursor.moveToNext());
         }
