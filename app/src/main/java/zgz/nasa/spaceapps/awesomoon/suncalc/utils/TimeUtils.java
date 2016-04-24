@@ -1,4 +1,4 @@
-package com.florianmski.suncalc.utils;
+package zgz.nasa.spaceapps.awesomoon.suncalc.utils;
 
 public class TimeUtils
 {

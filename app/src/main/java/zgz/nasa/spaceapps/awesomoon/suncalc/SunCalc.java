@@ -1,11 +1,21 @@
-package com.florianmski.suncalc;
+package zgz.nasa.spaceapps.awesomoon.suncalc;
 
 
-import com.florianmski.suncalc.models.*;
-import com.florianmski.suncalc.utils.*;
 
 import java.util.Calendar;
 import java.util.List;
+
+import zgz.nasa.spaceapps.awesomoon.suncalc.models.EquatorialCoordinates;
+import zgz.nasa.spaceapps.awesomoon.suncalc.models.GeocentricCoordinates;
+import zgz.nasa.spaceapps.awesomoon.suncalc.models.MoonPosition;
+import zgz.nasa.spaceapps.awesomoon.suncalc.models.SunPhase;
+import zgz.nasa.spaceapps.awesomoon.suncalc.models.SunPosition;
+import zgz.nasa.spaceapps.awesomoon.suncalc.utils.Constants;
+import zgz.nasa.spaceapps.awesomoon.suncalc.utils.DateUtils;
+import zgz.nasa.spaceapps.awesomoon.suncalc.utils.MoonUtils;
+import zgz.nasa.spaceapps.awesomoon.suncalc.utils.PositionUtils;
+import zgz.nasa.spaceapps.awesomoon.suncalc.utils.SunUtils;
+import zgz.nasa.spaceapps.awesomoon.suncalc.utils.TimeUtils;
 
 public class SunCalc
 {

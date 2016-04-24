@@ -29,22 +29,19 @@ public class YourWeightFragment extends Fragment {
 
     public static final double comp = 0.166;
     EditText et1;
-    RelativeLayout relativeLayout;
+    TextView result;
     public YourWeightFragment(){}
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.weight_layout, container, false);
-        relativeLayout = (RelativeLayout) inflater.inflate(R.layout.weight_layout, container, false);
         getActivity().setTitle("Your weight on the moon");
         Button b = (Button) view.findViewById(R.id.btw);
         et1=(EditText) view.findViewById(R.id.editW);
-
+        result = (TextView) view.findViewById(R.id.resultw);
         b.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
             {
-
-                TextView result =(TextView) relativeLayout.findViewById(R.id.resultw);
                 String aux=et1.getText().toString();
                 double weight=Double.parseDouble(aux);
                 double moonWeight= weight*comp;
@@ -53,7 +50,6 @@ public class YourWeightFragment extends Fragment {
 
             }
         });
-        container.addView(relativeLayout);
         return view;
     }
 

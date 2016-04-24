@@ -1,6 +1,6 @@
-package com.florianmski.suncalc.models;
+package zgz.nasa.spaceapps.awesomoon.suncalc.models;
 
-import com.florianmski.suncalc.utils.Constants.SunAngles;
+import zgz.nasa.spaceapps.awesomoon.suncalc.utils.Constants.SunAngles;
 
 import java.security.InvalidParameterException;
 import java.util.*;
