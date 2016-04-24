@@ -94,8 +94,11 @@ public class DbAdapter extends SQLiteRelacional {
             initialValues.put(KEY_IDINFO,id);
             initialValues.put(Titulo, titulo);
             initialValues.put(Cuerpo,cuerpo);
-
-            return mDb.insert(DATABASE_TABLE_INFORMACION, null, initialValues);
+        try {
+            return mDb.insertOrThrow(DATABASE_TABLE_INFORMACION, null, initialValues);
+        }catch (SQLiteConstraintException e){
+            return 0;
+        }
     }
 
     public long insertMultimedia(String tipo, String uri, int duracion){
@@ -108,7 +111,7 @@ public class DbAdapter extends SQLiteRelacional {
             initialValues.put(URI, uri);
             initialValues.put(Duracion, duracion);
             try {
-                return mDb.insert(DATABASE_TABLE_MULTIMEDIA, null, initialValues);
+                return mDb.insertOrThrow(DATABASE_TABLE_MULTIMEDIA, null, initialValues);
             }catch (SQLiteConstraintException e){
                 return 0;
             }
@@ -131,6 +134,29 @@ public class DbAdapter extends SQLiteRelacional {
     }
     public Cursor getAllImages(){
         return mDb.query(DATABASE_TABLE_MULTIMEDIA,new String[]{"*"},Tipo+"=?",new String[]{"IMAGE"},null,null,null);
+    }
+    public long insertPregunta(int id, String texto, String correcta, String e1, String e2, String e3){
+        ContentValues initialValues = new ContentValues();
+        initialValues.put(KEY_IDPREG,id);
+        initialValues.put(Texto,texto);
+        initialValues.put(Correcta,correcta);
+        initialValues.put(Error1,e1);
+        initialValues.put(Error2,e2);
+        initialValues.put(Error3,e3);
+        try{
+        return mDb.insertOrThrow(DATABASE_TABLE_PREGUNTA,null,initialValues);
+        }catch (SQLiteConstraintException e){
+            return 0;
+        }
+    }
+    public Cursor getQuestion(int id){
+        return mDb.query(DATABASE_TABLE_PREGUNTA,new String[]{"*"},KEY_IDPREG+"=?",new String[]{""+id},null,null,null);
+    }
+    public Cursor getCountQuestions(){
+        return mDb.query(DATABASE_TABLE_PREGUNTA,new String[]{"COUNT(*)"},null,null,null,null,null);
+    }
+    public Cursor getAllQuestions(){
+        return mDb.query(DATABASE_TABLE_PREGUNTA,new String[]{"*"},null,null,null,null,null);
     }
 /*
     public long insertPartida(int id, int puntuacion, int//OISBIWUVECVW fecha,String juego, int numero){

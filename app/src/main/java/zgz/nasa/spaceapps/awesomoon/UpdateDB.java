@@ -42,7 +42,7 @@ public class UpdateDB {
                 String e1 = j.getString(db.Error1);
                 String e2 = j.getString(db.Error2);
                 String e3 = j.getString(db.Error3);
-                //TODO INSERCCION
+                db.insertPregunta(id,texto,correcta,e1,e2,e3);
             }
             preguntas=null; //liberamos memoria
             JSONArray informacion = updates.getJSONArray(db.DATABASE_TABLE_INFORMACION);
@@ -51,7 +51,7 @@ public class UpdateDB {
                 int id = j.getInt(db.KEY_IDINFO);
                 String titulo = j.getString(db.Titulo);
                 String cuerpo = j.getString(db.Cuerpo);
-                //todo insert
+                db.insertInformacion(id,titulo,cuerpo);
             }
             informacion=null;
             JSONArray multimedia = updates.getJSONArray(db.DATABASE_TABLE_MULTIMEDIA);
@@ -61,8 +61,6 @@ public class UpdateDB {
                 String uri = j.getString(db.URI);
                 int dur = j.getInt(db.Duracion);
                 db.insertMultimedia(tipo, uri, dur);
-
-                Log.d("updater","inserted multimedia item");
             }
             multimedia=null;
         } catch (JSONException e) {
