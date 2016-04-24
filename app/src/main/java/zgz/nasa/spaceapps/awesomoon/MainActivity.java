@@ -27,6 +27,7 @@ import zgz.nasa.spaceapps.awesomoon.Fragments.AboutFragment;
 import zgz.nasa.spaceapps.awesomoon.Fragments.GaleryFragment;
 import zgz.nasa.spaceapps.awesomoon.Fragments.InformationListFragment;
 import zgz.nasa.spaceapps.awesomoon.Fragments.QuestionFragment;
+import zgz.nasa.spaceapps.awesomoon.Fragments.YourWeightFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, SensorEventListener {
@@ -144,6 +145,9 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_about:
                 f = new AboutFragment();
+                break;
+            case R.id.nav_peso:
+                f = new YourWeightFragment();
                 break;
         }
         f.setArguments(args);
