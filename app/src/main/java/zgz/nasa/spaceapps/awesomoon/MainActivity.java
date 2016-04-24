@@ -2,6 +2,7 @@ package zgz.nasa.spaceapps.awesomoon;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -19,6 +20,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import java.util.List;
+
 import zgz.nasa.spaceapps.awesomoon.CustomAdapter.DbAdapter;
 import zgz.nasa.spaceapps.awesomoon.Fragments.AboutFragment;
 import zgz.nasa.spaceapps.awesomoon.Fragments.GaleryFragment;
@@ -26,10 +29,10 @@ import zgz.nasa.spaceapps.awesomoon.Fragments.InformationListFragment;
 import zgz.nasa.spaceapps.awesomoon.Fragments.QuestionFragment;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, SensorEventListener {
 
     //RADAR
-    private double sensorRange = 0.6;
+    private double sensorRange = 0.55;
     private SensorManager mSensorManager;
     Integer fragmentId;
     Sensor accelerometer;
@@ -71,6 +74,9 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+    private void getSensorData() {
+        List<Sensor> deviceSensors = mSensorManager.getSensorList(Sensor.TYPE_ALL);
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -144,7 +150,7 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
+    @Override
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER)
             mGravity = event.values;
@@ -168,6 +174,11 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
+
     private void locateMoon(float[] orientation) {
         //Añado un error para trabajar con rango de sensores
         float[] moonOrientation = getMoonOrientation();
@@ -189,6 +200,16 @@ public class MainActivity extends AppCompatActivity
         reproduceSound(distance);
     }
 
+    protected void onPause() {
+        super.onPause();
+        mSensorManager.unregisterListener(this);
+    }
+
+    protected void onResume() {
+        super.onResume();
+        mSensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_UI);
+        mSensorManager.registerListener(this, magnetometer, SensorManager.SENSOR_DELAY_UI);
+    }
     private float[] getMoonOrientation() {
         float moonOrientation[] = new float[3];
         //azimut
@@ -213,7 +234,8 @@ public class MainActivity extends AppCompatActivity
             mPlayer.start();
             //this.getFragmentManager().getFragment;
         } else {
-            mPlayer.stop();
+            mPlayer.setLooping(false);
         }
     }
+
 }

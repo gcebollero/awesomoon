@@ -2,6 +2,7 @@ package zgz.nasa.spaceapps.awesomoon;
 
 import android.content.Context;
 
+import android.content.pm.ActivityInfo;
 import android.hardware.Camera;
 import android.net.Uri;
 import android.os.Bundle;
@@ -22,7 +23,6 @@ public class CameraFindExtractionFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         mCameraExtraction = new CameraExtraction(
                 this.getActivity().getBaseContext(),
                 this.getActivity().getWindowManager().getDefaultDisplay().getRotation()
