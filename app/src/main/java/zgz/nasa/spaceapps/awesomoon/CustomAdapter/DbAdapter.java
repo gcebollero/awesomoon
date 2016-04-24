@@ -90,10 +90,11 @@ public class DbAdapter extends SQLiteRelacional {
             onCreate(db);
         }
     }
-    public long insertInformacion(int id, String titulo, String cuerpo){
+    public long insertInformacion(int id, String titulo, String cuerpo, String uriinfo){
             ContentValues initialValues = new ContentValues();
             initialValues.put(KEY_IDINFO,id);
             initialValues.put(Titulo, titulo);
+            initialValues.put(INFOURI,uriinfo);
             initialValues.put(Cuerpo,cuerpo);
         try {
             return mDb.insertOrThrow(DATABASE_TABLE_INFORMACION, null, initialValues);
@@ -102,7 +103,7 @@ public class DbAdapter extends SQLiteRelacional {
         }
     }
 
-    public long insertMultimedia(String tipo, String uri, int duracion){
+    public long insertMultimedia(String tipo, String uri, int duracion, String textomulti){
         if(tipo==null || uri ==null){
             Log.w("InsertMultimediaError","tipo:"+tipo+" uri:"+uri);
             return -1;
@@ -110,6 +111,7 @@ public class DbAdapter extends SQLiteRelacional {
             ContentValues initialValues = new ContentValues();
             initialValues.put(Tipo, tipo);
             initialValues.put(URI, uri);
+            initialValues.put(TextoMulti, textomulti);
             initialValues.put(Duracion, duracion);
             try {
                 return mDb.insertOrThrow(DATABASE_TABLE_MULTIMEDIA, null, initialValues);
