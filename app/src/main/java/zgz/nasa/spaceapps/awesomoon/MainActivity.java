@@ -170,9 +170,9 @@ public class MainActivity extends AppCompatActivity
                 pitch = orientation[1];
                 roll = orientation[2];
                 locateMoon(orientation);
-                Log.d("Azimuth: ", String.valueOf(azimut));
-                Log.d("Pitch: ", String.valueOf(pitch));
-                Log.d("Roll: ", String.valueOf(roll));
+               // Log.d("Azimuth: ", String.valueOf(azimut));
+                //Log.d("Pitch: ", String.valueOf(pitch));
+                //Log.d("Roll: ", String.valueOf(roll));
             }
         }
     }

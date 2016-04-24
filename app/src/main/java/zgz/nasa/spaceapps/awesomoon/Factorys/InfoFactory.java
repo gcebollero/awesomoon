@@ -31,11 +31,13 @@ public class InfoFactory {
         if (mCursor.moveToFirst()) {
             do {
                 //Para cada fila de la base de datos, obtenemos todos los campos
+                int idInfo = mCursor.getInt(mCursor.getColumnIndex(DbAdapter.KEY_IDINFO));
                 String titleInfo = mCursor.getString(mCursor.getColumnIndex(DbAdapter.Titulo));
-                Log.w("titleInfo",titleInfo);
+                //TODO IMAGEN
                 String imgInfo = null;//mCursor.getString(mCursor.getColumnIndex(DbAdapter.URI));
+                String bodyInfo = mCursor.getString(mCursor.getColumnIndex(DbAdapter.Cuerpo));
 
-                lista.add(new Information(imgInfo,titleInfo));
+                lista.add(new Information(idInfo,imgInfo,titleInfo,bodyInfo));
 
             } while (mCursor.moveToNext());
         }

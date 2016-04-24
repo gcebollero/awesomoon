@@ -116,6 +116,7 @@ public class DbAdapter extends SQLiteRelacional {
             try {
                 return mDb.insertOrThrow(DATABASE_TABLE_MULTIMEDIA, null, initialValues);
             }catch (SQLiteConstraintException e){
+                e.printStackTrace();
                 return 0;
             }
         }
@@ -164,6 +165,10 @@ public class DbAdapter extends SQLiteRelacional {
 
     public Cursor getAllInformation(){
         return mDb.query(DATABASE_TABLE_INFORMACION,new String[]{"*"},null,null,null,null,null);
+    }
+
+    public Cursor getTitleInformation(int idInfo){
+        return mDb.query(DATABASE_TABLE_INFORMACION, new String[]{Titulo},KEY_IDINFO+"=?",new String[]{""+idInfo},null,null,null,null);
     }
 
 /*

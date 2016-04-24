@@ -1,9 +1,8 @@
 package zgz.nasa.spaceapps.awesomoon.Fragments;
 
-import android.annotation.TargetApi;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,21 +12,19 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import android.support.v4.app.Fragment;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import zgz.nasa.spaceapps.awesomoon.CustomAdapter.InfoAdapter;
 import zgz.nasa.spaceapps.awesomoon.CustomAdapter.DbAdapter;
+import zgz.nasa.spaceapps.awesomoon.CustomAdapter.InfoAdapter;
 import zgz.nasa.spaceapps.awesomoon.Factorys.InfoFactory;
 import zgz.nasa.spaceapps.awesomoon.R;
 import zgz.nasa.spaceapps.awesomoon.Tipes.Information;
 
 /**
- * Created by dani on 23/04/16.
+ * Created by dani on 24/04/16.
  */
-public class InformationListFragment extends Fragment{
+public class InfoContentFragment extends Fragment {
 
     private ListView lista;
     private DbAdapter mdb;
@@ -35,36 +32,29 @@ public class InformationListFragment extends Fragment{
     private List<Information> dates_info = new ArrayList<Information>();
     private static String selectedInfo = null;
     private View vista;
-    public InformationListFragment() {}
+    public static final int ARG_INFO = 0;
+
+    public InfoContentFragment() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_info_list, container, false);
-        getActivity().setTitle("Information");
+
+//        if(!mdb.isOpen()){
+//            mdb.open();
+//        }
+//        String titulo = String.valueOf(mdb.getTitleInformation(ARG_INFO));
+//        getActivity().setTitle(titulo);
+
+        getActivity().setTitle("HOLA MUNDO");
 
         NavigationView navigationView = (NavigationView) getActivity().findViewById(R.id.nav_view);
         navigationView.setCheckedItem(R.id.nav_informacion);
 
         //Montar listado de playlist
-        montarListView(view);
+        montarContenido(view);
 
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> pariente, View view, int posicion, long id) {
-                Information selected = (Information) pariente.getItemAtPosition(posicion);
-                Bundle args = new Bundle();
-
-                //args.putInt(String.valueOf(InfoContentFragment.ARG_INFO),selected.getIdInfo());
-
-                //InfoContentFragment f = new InfoContentFragment();
-                //f.setArguments(args);
-
-                //FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                //fragmentManager.beginTransaction().replace(R.id.content_frame, f).addToBackStack(null).commit();
-
-            }
-        });
         vista=view;
         return view;
     }
@@ -73,7 +63,7 @@ public class InformationListFragment extends Fragment{
      * Incluye en el listview el contenido de la base de datos
      * @param view
      */
-    private void montarListView(View view){
+    private void montarContenido(View view){
 
         //Obtener todos los datos sobre las playlist existentes
         mdb = new DbAdapter(getContext());
@@ -92,16 +82,18 @@ public class InformationListFragment extends Fragment{
             public void onEntrada(Object entrada, View view) {
                 if (entrada != null) {
 
-                    ImageView imagen_info = (ImageView) view.findViewById(R.id.imgeView_img_info);
+                    ImageView imagen_info = (ImageView) view.findViewById(R.id.imgeView_img_content);
                     if (imagen_info != null) {
                         //imagen_info.setImageResource(((Information) entrada).getIdImageInfo());
                     }
-                    TextView titulo_info = (TextView) view.findViewById(R.id.textView_info_titulo);
-                    if (titulo_info != null)
-                        titulo_info.setText(((Information) entrada).getTitleInfo());
+                    TextView body_info = (TextView) view.findViewById(R.id.textView_info_content);
+                    if (body_info != null)
+                        body_info.setText(((Information) entrada).getBodyInfo());
                 }
             }
 
         });
     }
+
+
 }
