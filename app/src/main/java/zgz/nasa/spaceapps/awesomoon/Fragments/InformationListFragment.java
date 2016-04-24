@@ -55,13 +55,13 @@ public class InformationListFragment extends Fragment{
                 Information selected = (Information) pariente.getItemAtPosition(posicion);
                 Bundle args = new Bundle();
 
-                //args.putInt(String.valueOf(InfoContentFragment.ARG_INFO),selected.getIdInfo());
+                args.putInt(String.valueOf(InfoContentFragment.ARG_INFO),selected.getIdInfo());
 
-                //InfoContentFragment f = new InfoContentFragment();
-                //f.setArguments(args);
+                InfoContentFragment f = new InfoContentFragment();
+                f.setArguments(args);
 
-                //FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                //fragmentManager.beginTransaction().replace(R.id.content_frame, f).addToBackStack(null).commit();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, f).addToBackStack(null).commit();
 
             }
         });

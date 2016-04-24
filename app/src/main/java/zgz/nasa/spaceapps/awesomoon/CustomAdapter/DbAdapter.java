@@ -170,6 +170,9 @@ public class DbAdapter extends SQLiteRelacional {
     public Cursor getTitleInformation(int idInfo){
         return mDb.query(DATABASE_TABLE_INFORMACION, new String[]{Titulo},KEY_IDINFO+"=?",new String[]{""+idInfo},null,null,null,null);
     }
+    public Cursor getBodyInformation(int idInfo){
+        return mDb.query(DATABASE_TABLE_INFORMACION, new String[]{Cuerpo},KEY_IDINFO+"=?",new String[]{""+idInfo},null,null,null,null);
+    }
 
 /*
     public long insertPartida(int id, int puntuacion, int//OISBIWUVECVW fecha,String juego, int numero){
