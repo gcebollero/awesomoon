@@ -40,7 +40,7 @@ public class InformationListFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_info_list, container, false);
-        getActivity().setTitle("Playlists");
+        getActivity().setTitle("Information");
 
         NavigationView navigationView = (NavigationView) getActivity().findViewById(R.id.nav_view);
         navigationView.setCheckedItem(R.id.nav_informacion);
@@ -69,7 +69,6 @@ public class InformationListFragment extends Fragment{
      * Incluye en el listview el contenido de la base de datos
      * @param view
      */
-    @TargetApi(Build.VERSION_CODES.M)
     private void montarListView(View view){
 
         //Obtener todos los datos sobre las playlist existentes
@@ -90,9 +89,9 @@ public class InformationListFragment extends Fragment{
                 if (entrada != null) {
 
                     ImageView imagen_info = (ImageView) view.findViewById(R.id.imgeView_img_info);
-                    if (imagen_info != null)
-                        imagen_info.setImageResource(((Information) entrada).getIdImageInfo());
-
+                    if (imagen_info != null) {
+                        //imagen_info.setImageResource(((Information) entrada).getIdImageInfo());
+                    }
                     TextView titulo_info = (TextView) view.findViewById(R.id.textView_info_titulo);
                     if (titulo_info != null)
                         titulo_info.setText(((Information) entrada).getTitleInfo());
