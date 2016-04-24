@@ -1,5 +1,4 @@
-package com.bttm.booktothemoon;
-
+package zgz.nasa.spaceapps.awesomoon;
 import android.app.Fragment;
 import android.content.Context;
 import android.graphics.drawable.ShapeDrawable;

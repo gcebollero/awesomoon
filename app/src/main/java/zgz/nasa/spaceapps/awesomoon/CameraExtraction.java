@@ -1,4 +1,4 @@
-package com.bttm.booktothemoon;
+package zgz.nasa.spaceapps.awesomoon;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
