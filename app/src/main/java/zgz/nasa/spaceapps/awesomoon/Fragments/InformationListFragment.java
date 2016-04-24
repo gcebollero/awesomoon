@@ -1,6 +1,10 @@
 package zgz.nasa.spaceapps.awesomoon.Fragments;
 
 import android.annotation.TargetApi;
+import android.app.ProgressDialog;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -15,6 +19,7 @@ import android.widget.TextView;
 
 import android.support.v4.app.Fragment;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +35,10 @@ import zgz.nasa.spaceapps.awesomoon.Tipes.Information;
 public class InformationListFragment extends Fragment{
 
     private ListView lista;
+
+    ProgressDialog mProgressDialog;
+    private static ImageView imagen_info;
+
     private DbAdapter mdb;
     private InfoAdapter adaptador;
     private List<Information> dates_info = new ArrayList<Information>();
@@ -92,9 +101,10 @@ public class InformationListFragment extends Fragment{
             public void onEntrada(Object entrada, View view) {
                 if (entrada != null) {
 
-                    ImageView imagen_info = (ImageView) view.findViewById(R.id.imgeView_img_info);
+                    imagen_info = (ImageView) view.findViewById(R.id.imgeView_img_info);
                     if (imagen_info != null) {
-                        //imagen_info.setImageResource(((Information) entrada).getIdImageInfo());
+                        //new DownloadImage().execute(((Information) entrada).getURIImageInfo());
+                        imagen_info.setImageResource(R.drawable.nasa570x450);
                     }
                     TextView titulo_info = (TextView) view.findViewById(R.id.textView_info_titulo);
                     if (titulo_info != null)
@@ -104,4 +114,46 @@ public class InformationListFragment extends Fragment{
 
         });
     }
+
+    // DownloadImage AsyncTask
+    class DownloadImage extends AsyncTask<String, Void, Bitmap> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            // Create a progressdialog
+            mProgressDialog = new ProgressDialog(getContext());
+            // Set progressdialog title
+            mProgressDialog.setTitle(getContext().getString(R.string.downloading));
+            // Set progressdialog message
+            mProgressDialog.setMessage(getContext().getString(R.string.wait));
+            mProgressDialog.setIndeterminate(false);
+            // Show progressdialog
+            mProgressDialog.show();
+        }
+
+        @Override
+        protected Bitmap doInBackground(String... URL) {
+
+            String imageURL = URL[0];
+            Bitmap bitmap = null;
+            try {
+                // Download Image from URL
+                InputStream input = new java.net.URL(imageURL).openStream();
+                // Decode Bitmap
+                bitmap = BitmapFactory.decodeStream(input);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            // Close progressdialog
+            mProgressDialog.dismiss();
+            return bitmap;
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap result) {
+            imagen_info.setImageBitmap(result);
+        }
+    }
+
 }

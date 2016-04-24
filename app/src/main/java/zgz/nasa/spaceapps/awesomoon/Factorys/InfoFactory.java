@@ -54,7 +54,7 @@ public class InfoFactory {
                 if(idInfo == id){
                     String titleInfo = mCursor.getString(mCursor.getColumnIndex(DbAdapter.Titulo));
                     //TODO IMAGEN
-                    String imgInfo = null;//mCursor.getString(mCursor.getColumnIndex(DbAdapter.URI));
+                    String imgInfo = mCursor.getString(mCursor.getColumnIndex(DbAdapter.INFOURI));
                     String bodyInfo = mCursor.getString(mCursor.getColumnIndex(DbAdapter.Cuerpo));
                     contenido.add(new Information(idInfo,imgInfo,titleInfo,bodyInfo));
                     mCursor.moveToLast();
@@ -75,7 +75,6 @@ public class InfoFactory {
         if(!db.isOpen()){
             db.open();
         }
-        //TODO SACAR SOLO CONTENIDO DE UNA INFORMACION
         return extractContentOfInformation(db.getAllInformation(), idInfo);
     }
 }

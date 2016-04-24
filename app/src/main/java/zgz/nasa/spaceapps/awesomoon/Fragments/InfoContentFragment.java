@@ -1,6 +1,7 @@
 package zgz.nasa.spaceapps.awesomoon.Fragments;
 
 import android.database.Cursor;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -53,6 +54,9 @@ public class InfoContentFragment extends Fragment {
 
         String titleInfo = content_info.get(0).getTitleInfo();
         getActivity().setTitle(titleInfo);
+
+        ImageView imagenInfo = (ImageView) view.findViewById(R.id.imgeView_img_content);
+        imagenInfo.setImageResource(R.drawable.nasa570x450);
 
         String bodyInfo = content_info.get(0).getBodyInfo();
         TextView txtBodyInfo = (TextView) view.findViewById(R.id.textView_info_content);
