@@ -1,4 +1,4 @@
-package zgz.nasa.spaceapps.awesomoon;
+package zgz.nasa.spaceapps.awesomoon.Fragments;
 
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -19,6 +19,7 @@ import java.util.Random;
 
 import zgz.nasa.spaceapps.awesomoon.CustomAdapter.DbAdapter;
 import zgz.nasa.spaceapps.awesomoon.Factorys.QuestionFactory;
+import zgz.nasa.spaceapps.awesomoon.R;
 import zgz.nasa.spaceapps.awesomoon.Tipes.Question;
 
 
@@ -48,6 +49,7 @@ public class QuestionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.question_row, container, false);
+        getActivity().setTitle("Question game");
         DbAdapter db = new DbAdapter(getContext());
         if(!db.isOpen())db.open();
         qf = new QuestionFactory(db);

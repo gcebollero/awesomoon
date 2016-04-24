@@ -16,6 +16,7 @@ import android.widget.Toast;
 import zgz.nasa.spaceapps.awesomoon.CustomAdapter.DbAdapter;
 import zgz.nasa.spaceapps.awesomoon.Fragments.GaleryFragment;
 import zgz.nasa.spaceapps.awesomoon.Fragments.InformationListFragment;
+import zgz.nasa.spaceapps.awesomoon.Fragments.QuestionFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
