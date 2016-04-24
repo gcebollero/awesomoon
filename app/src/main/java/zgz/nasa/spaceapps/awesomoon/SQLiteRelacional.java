@@ -16,9 +16,9 @@ public class SQLiteRelacional {
     public static final String KEY_IDMULTI = "ID";
     public static final String KEY_IDPREG = "ID";
     public static final String KEY_IDPART = "ID";
-    public static final String Titulo="Titulo";
-    public static final String Cuerpo="Cuerpo";
-    public static final String Tipo ="Tipo";
+    public static final String Titulo="Titulo"; //TITULO DE INFO.
+    public static final String Cuerpo="Cuerpo"; //CUERPO DE INFO.
+    public static final String Tipo ="Tipo";    //TIPO MULTIMEDIA
     public static final String URI="URI";
     public static final String Duracion ="Duracion";
     public static final String Texto = "Texto";

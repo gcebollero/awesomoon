@@ -4,6 +4,7 @@ import zgz.nasa.spaceapps.awesomoon.CustomAdapter.DbAdapter;
 import zgz.nasa.spaceapps.awesomoon.Tipes.Information;
 
 import android.database.Cursor;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,8 +31,11 @@ public class InfoFactory {
         if (mCursor.moveToFirst()) {
             do {
                 //Para cada fila de la base de datos, obtenemos todos los campos
-                String titleInfo; //= mCursor.getString(mCursor.getColumnIndex(DbAdapter.KEY_NOMBRE_PLAYLIST));
-                String imgInfo; //= mCursor.getString(mCursor.getColumnIndex(DbAdapter.KEY_NUM_CANCIONES));
+                String titleInfo = mCursor.getString(mCursor.getColumnIndex(DbAdapter.Titulo));
+                Log.w("titleInfo",titleInfo);
+                String imgInfo = null;//mCursor.getString(mCursor.getColumnIndex(DbAdapter.URI));
+
+                lista.add(new Information(imgInfo,titleInfo));
 
             } while (mCursor.moveToNext());
         }
