@@ -110,8 +110,18 @@
 		"TextoMulti":"Full Moon, December 2015"
 	}, {
 		"Tipo": "IMAGE",
-		"URI": "http://solarsystem.nasa.gov/images/galleries/GPN-2000-001139_732.jpg",
+		"URI": "http://solarsystem.nasa.gov/images/galleries/D2011_0418_D1_br.jpg",
 		"Duracion": -1,
-		"TextoMulti":""
+		"TextoMulti":"Size in our solar system"
+	}, {
+		"Tipo": "IMAGE",
+		"URI": "http://solarsystem.nasa.gov/images/galleries/GlobalMapMoon7321.jpg",
+		"Duracion": -1,
+		"TextoMulti":"Iron Moon"
+	}, {
+		"Tipo": "IMAGE",
+		"URI": "http://solarsystem.nasa.gov/images/galleries/LO1_Discuss_732.jpg",
+		"Duracion": -1,
+		"TextoMulti":"Discussion on the first picture of Earth from the Moon"
 	}]
 }
