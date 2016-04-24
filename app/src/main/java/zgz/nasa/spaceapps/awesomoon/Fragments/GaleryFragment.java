@@ -1,4 +1,4 @@
-package zgz.nasa.spaceapps.awesomoon;
+package zgz.nasa.spaceapps.awesomoon.Fragments;
 
 import android.app.ProgressDialog;
 import android.database.Cursor;
@@ -17,6 +17,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 import zgz.nasa.spaceapps.awesomoon.CustomAdapter.DbAdapter;
+import zgz.nasa.spaceapps.awesomoon.R;
 
 
 /**
@@ -47,6 +48,7 @@ public class GaleryFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.galery_layout, container, false);
+        getActivity().setTitle("Galery");
         DbAdapter db = new DbAdapter(getContext());
         if(!db.isOpen())db.open();
         Cursor c = db.getAllImages();
