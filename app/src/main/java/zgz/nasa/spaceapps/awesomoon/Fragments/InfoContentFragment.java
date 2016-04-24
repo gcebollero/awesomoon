@@ -1,15 +1,18 @@
 package zgz.nasa.spaceapps.awesomoon.Fragments;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.widget.CursorAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -29,49 +32,34 @@ public class InfoContentFragment extends Fragment {
     private ListView lista;
     private DbAdapter mdb;
     private InfoAdapter adaptador;
-    private List<Information> dates_info = new ArrayList<Information>();
+    private List<Information> content_info = new ArrayList<Information>();
     private static String selectedInfo = null;
     private View vista;
-    public static final int ARG_INFO = 0;
+    private String titulo = "Information";
+    public static final String ARG_INFO = "vacio";
 
     public InfoContentFragment() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_info_content, container, false);
-
-//        if(!mdb.isOpen()){
-//            mdb.open();
-//        }
-//        String titulo = String.valueOf(mdb.getTitleInformation(ARG_INFO));
-        getActivity().setTitle("titulo");
-
-        NavigationView navigationView = (NavigationView) getActivity().findViewById(R.id.nav_view);
-        navigationView.setCheckedItem(R.id.nav_informacion);
-
-        //Montar listado de playlist
-        montarContenido(view);
-
-        vista=view;
-        return view;
-    }
-
-    /**
-     * Incluye en el listview el contenido de la base de datos
-     * @param view
-     */
-    private void montarContenido(View view){
+        View view = inflater.inflate(R.layout.entry_info_content, container, false);
 
         //Obtener todos los datos sobre las playlist existentes
         mdb = new DbAdapter(getContext());
-        TextView body_info = (TextView) view.findViewById(R.id.textView_info_content);
+        InfoFactory inFa = new InfoFactory(mdb);
+        int id = getArguments().getInt(ARG_INFO);
+        content_info = inFa.getContentInformation(id);
 
-        if(!mdb.isOpen()){
-            mdb.open();
-        }
-        body_info.setText((CharSequence) mdb.getBodyInformation(ARG_INFO));
-        
+        String titleInfo = content_info.get(0).getTitleInfo();
+        getActivity().setTitle(titleInfo);
+
+        String bodyInfo = content_info.get(0).getBodyInfo();
+        TextView txtBodyInfo = (TextView) view.findViewById(R.id.textView_info_content);
+        txtBodyInfo.setText(bodyInfo);
+
+        vista=view;
+        return view;
     }
 
 

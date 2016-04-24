@@ -55,7 +55,7 @@ public class InformationListFragment extends Fragment{
                 Information selected = (Information) pariente.getItemAtPosition(posicion);
                 Bundle args = new Bundle();
 
-                args.putInt(String.valueOf(InfoContentFragment.ARG_INFO),selected.getIdInfo());
+                args.putInt(InfoContentFragment.ARG_INFO,selected.getIdInfo());
 
                 InfoContentFragment f = new InfoContentFragment();
                 f.setArguments(args);
