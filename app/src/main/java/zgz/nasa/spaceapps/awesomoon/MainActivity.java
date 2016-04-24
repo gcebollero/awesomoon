@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity
         magnetometer = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
         mPlayer = MediaPlayer.create(this.getApplicationContext(), R.raw.ping);
         mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        mPlayer.setVolume(0,0);
         //RADAR
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -118,6 +119,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         Fragment f = new Fragment();
         Bundle args = new Bundle();
+        mPlayer.setVolume(0,0);
         switch(id){
             case R.id.nav_galeria:
                 f = new GaleryFragment();
@@ -133,6 +135,7 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_radar:
                 f = new CameraFindExtractionFragment();
+                mPlayer.setVolume(1,1);
                 break;
             case R.id.nav_update:
                 UpdateDB u = new UpdateDB();
@@ -202,6 +205,7 @@ public class MainActivity extends AppCompatActivity
 
     protected void onPause() {
         super.onPause();
+        mPlayer.setVolume(0,0);
         mSensorManager.unregisterListener(this);
     }
 
