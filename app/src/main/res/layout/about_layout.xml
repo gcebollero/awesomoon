@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/space_apps_logo"/>
+    <TextView
+        android:layout_below="@id/space_apps_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="60dp"
+        android:text="Developed with "
+        android:id="@+id/about_head" />
+    <ImageButton
+        android:layout_below="@id/space_apps_logo"
+        android:id="@+id/love"
+        android:src="@drawable/ic_favorite_black_24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="@android:color/holo_red_light"
+        android:background="@android:color/transparent"
+        android:layout_toRightOf="@+id/about_head"/>
+    <TextView
+        android:layout_below="@id/space_apps_logo"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" in Zaragoza"
+        android:layout_toRightOf="@id/love"/>
+    <TextView
+        android:layout_marginLeft="60dp"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/love"
+        android:id="@+id/dani"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Daniel Cabrera"/>
+    <TextView
+        android:layout_marginLeft="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cebo"
+        android:layout_below="@id/dani"
+        android:layout_gravity="center_horizontal"
+        android:text="Guillermo Cebollero"/>
+    <TextView
+        android:layout_marginLeft="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/alba"
+        android:layout_below="@id/cebo"
+        android:layout_gravity="center_horizontal"
+        android:text="Alba Clemente"/>
+    <TextView
+        android:layout_marginLeft="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/eduardo"
+        android:layout_below="@id/alba"
+        android:layout_gravity="center_horizontal"
+        android:text="Eduardo Lacasa"/>
+    <TextView
+        android:layout_marginLeft="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/pedro"
+        android:layout_below="@id/eduardo"
+        android:layout_gravity="center_horizontal"
+        android:text="Pedro Rivas"/>
+    <TextView
+        android:layout_marginLeft="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/javier"
+        android:layout_below="@id/pedro"
+        android:layout_gravity="center_horizontal"
+        android:text="Javier Gallo"/>
+</RelativeLayout>

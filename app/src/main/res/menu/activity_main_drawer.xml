@@ -4,32 +4,36 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_juegos"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Juegos" />
+            android:icon="@drawable/ic_videogame_asset_black_24dp"
+            android:title="Games" />
         <item
             android:id="@+id/nav_galeria"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Galleria" />
+            android:title="Gallery" />
         <item
             android:id="@+id/nav_informacion"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Información" />
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="Information" />
+        <item
+            android:id="@+id/nav_radar"
+            android:icon="@drawable/ic_gps_fixed_black_24dp"
+            android:title="Moon Radar" />
         <item
             android:id="@+id/nav_mapa"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Mapa" />
+            android:icon="@drawable/ic_terrain_black_24dp"
+            android:title="Moon Map" />
     </group>
 
     <item android:title="Opciones">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_update"
+                android:icon="@drawable/ic_system_update_black_24dp"
+                android:title="Get new content!" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_account_circle_black_24dp"
+                android:title="About us" />
         </menu>
     </item>
 

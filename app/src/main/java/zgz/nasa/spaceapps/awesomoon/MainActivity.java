@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -86,6 +87,16 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_mapa:
                 f = new MapFragment();
+                break;
+            case R.id.nav_radar:
+                break;
+            case R.id.nav_update:
+                UpdateDB u = new UpdateDB();
+                u.init(getApplicationContext());
+                Toast.makeText(getApplicationContext(),"Downloading new content...",Toast.LENGTH_LONG).show();
+                break;
+            case R.id.nav_about:
+                f = new AboutFragment();
                 break;
         }
         f.setArguments(args);
