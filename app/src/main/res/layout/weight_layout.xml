@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editW"
         android:inputType="numberDecimal"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="68dp"
         android:hint="Insert your weight"
         android:textSize="30dp"
         android:scrollbars = "vertical"
@@ -18,37 +20,42 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
         android:text="  Kg"
         android:textSize="30dp"
         android:layout_toRightOf="@+id/editW"
         android:id="@+id/textKg" />
 
+
+</LinearLayout>
+
     <Button
         android:id="@+id/btw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_below="@+id/editW"
         android:layout_centerHorizontal="true"
         android:onClick="onCreateView"
         android:text="Calculate" />
-
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30dp"
-        android:layout_marginTop="150dp"
         android:id="@+id/resultw" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="170dp"
+        android:layout_gravity="center_horizontal"
         android:text="  Kg on the Moon"
         android:textSize="30dp"
         android:layout_alignParentRight="true"
         android:layout_toRightOf="@+id/resultw"
         android:id="@+id/textKgMoon" />
+</LinearLayout>
 
-
-</RelativeLayout>
+</LinearLayout>

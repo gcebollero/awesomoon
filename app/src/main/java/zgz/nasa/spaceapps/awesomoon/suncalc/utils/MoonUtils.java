@@ -1,6 +1,6 @@
-package com.florianmski.suncalc.utils;
+package zgz.nasa.spaceapps.awesomoon.suncalc.utils;
 
-import com.florianmski.suncalc.models.GeocentricCoordinates;
+import zgz.nasa.spaceapps.awesomoon.suncalc.models.GeocentricCoordinates;
 
 public class MoonUtils
 {

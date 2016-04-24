@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity
             mGravity = event.values;
         if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD)
             mGeomagnetic = event.values;
-        if (mGravity != null && mGeomagnetic != null) {
+       if (mGravity != null && mGeomagnetic != null) {
             float R[] = new float[9];
             float I[] = new float[9];
             boolean success = SensorManager.getRotationMatrix(R, I, mGravity, mGeomagnetic);
@@ -174,9 +174,9 @@ public class MainActivity extends AppCompatActivity
                 pitch = orientation[1];
                 roll = orientation[2];
                 locateMoon(orientation);
-               // Log.d("Azimuth: ", String.valueOf(azimut));
-                //Log.d("Pitch: ", String.valueOf(pitch));
-                //Log.d("Roll: ", String.valueOf(roll));
+                Log.d("Azimuth: ", String.valueOf(azimut));
+                Log.d("Pitch: ", String.valueOf(pitch));
+                Log.d("Roll: ", String.valueOf(roll));
             }
         }
     }

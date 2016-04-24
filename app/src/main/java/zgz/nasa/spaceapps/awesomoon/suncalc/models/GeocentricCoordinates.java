@@ -1,4 +1,4 @@
-package com.florianmski.suncalc.models;
+package zgz.nasa.spaceapps.awesomoon.suncalc.models;
 
 public class GeocentricCoordinates
 {
