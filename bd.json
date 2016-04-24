@@ -60,58 +60,58 @@
 	"INFORMACION": [{
 		"ID": 1,
 		"Titulo": "First Maned Moon Landing",
-		"Cuerpo": "The first maned Moon landing was in 1969, by the spaceship Apolo 11. The crew was formed by Neil A.Armstrong, Edwin E.Aldrin Jr.and Michael Collins.When Armstrong stepped on the Moon he said one of the most famous quotes of the history of the humanity: 'That is one small step for man, one giant leap for mankind'.",
-		"INFOURI": http://solarsystem.nasa.gov/images/galleries/GPN-2000-001117_732.jpg
+		"Cuerpo": "The first maned Moon landing was in 1969, by the spaceship Apolo 11. The crew was formed by Neil A.Armstrong, Edwin E.Aldrin Jr.and Michael Collins.When Armstrong stepped on the Moon he said one of the most famous quotes of the history of the mankind: 'That is one small step for man, one giant leap for mankind'.",
+		"INFOURI": "https://www.nasa.gov/sites/default/files/styles/ubernode_alt_horiz/public/images/464487main_AS11-40-5886_full.jpg"
 	}, {
 		"ID": 2,
 		"Titulo": "Moon and literature",
 		"Cuerpo": "The Moon has appeared in a lot of famous stories, for example, Don Quijote of the Mancha was called The Knight of the White Moon.",
-		"INFOURI": http://solarsystem.nasa.gov/images/galleries/GPN-2000-001117_732.jpg
+		"INFOURI": "http://www.elmuseovirtual.com/media/fotos/images/9110_01.jpg"
 	}, {
 		"ID": 3,
 		"Titulo": "Moon's age",
 		"Cuerpo": "The Moon was born 4.530.000.000 years ago, she keeps herself young, uh?.",
-		"INFOURI": http://solarsystem.nasa.gov/images/galleries/GPN-2000-001117_732.jpg
+		"INFOURI": "http://solarsystem.nasa.gov/images/galleries/GPN-2000-0011271.jpg"
 	}, {
 		"ID": 4,
 		"Titulo": "A day on the Moon",
 		"Cuerpo": "A day on the Moon lasts almost a month on the Earth, exactly 27.322 Earth days",
-		"INFOURI": http://solarsystem.nasa.gov/images/galleries/GPN-2000-001117_732.jpg
+		"INFOURI": "http://solarsystem.nasa.gov/images/galleries/Lunar_module_AS12-51-7507_732.jpg"
 	}, {
 		"ID": 5,
 		"Titulo": "The distance to the Moon",
 		"Cuerpo": "Have you ever think in travelling to the Moon? Moon is approximately 405,000 kilometers far from the Earth. It is like 10 times the circumference of Earth. Do you still want to travel to the Moon?",
-		"INFOURI": http://solarsystem.nasa.gov/images/galleries/GPN-2000-001117_732.jpg
+		"INFOURI": "http://solarsystem.nasa.gov/images/galleries/65481.jpg"
 	}, {
 		"ID": 6,
 		"Titulo": "The circumference of the Moon",
 		"Cuerpo": "The circumference of the Moon is 10,917 km. That is equivalent to 0.272719 times the circumference of the Earth, 109.170 football camps and 21.940 Olympic swimming pools.",
-		"INFOURI": http://solarsystem.nasa.gov/images/galleries/GPN-2000-001117_732.jpg
+		"INFOURI": "http://solarsystem.nasa.gov/images/galleries/wac_nearside_br.jpg"
 	}, {
 		"ID": 7,
 		"Titulo": "Moon's weight",
 		"Cuerpo": "The weight of the Moon is 73.476.730.924.573.500.000.000 kg. That is equivalent to 0.0123 times the weight of the Earth, 13.672.633.220.054.614.812 African elephants and 1,224,612,182,076,225,000 Egipcian pyramid stones.",
-		"INFOURI": http://solarsystem.nasa.gov/images/galleries/GPN-2000-001117_732.jpg
+		"INFOURI": "http://solarsystem.nasa.gov/images/galleries/485592main_20100927a_br.jpg"
 	}],
 	"MULTIMEDIA": [{
 		"Tipo": "IMAGE",
 		"URI": "http://solarsystem.nasa.gov/images/galleries/GPN-2000-001117_732.jpg",
 		"Duracion": -1,
-		"TextoMulti":"Esta foto es muy bonicaaaa"
+		"TextoMulti":"Irwin next to Rover"
 	}, {
 		"Tipo": "IMAGE",
 		"URI": "https://www.nasa.gov/sites/default/files/707429main_lunar_eclipse_lrg.jpg",
 		"Duracion": -1,
-		"TextoMulti":"Esta foto es muy bonicaaaa"
+		"TextoMulti":"Lunar Eclipse"
 	}, {
 		"Tipo": "IMAGE",
 		"URI": "http://www.nasa.gov/sites/default/files/thumbnails/image/christmas2015fullmoon.jpg",
 		"Duracion": -1,
-		"TextoMulti":"Esta foto es muy bonicaaaa"
+		"TextoMulti":"Full Moon, December 2015"
 	}, {
 		"Tipo": "IMAGE",
 		"URI": "http://solarsystem.nasa.gov/images/galleries/GPN-2000-001139_732.jpg",
 		"Duracion": -1,
-		"TextoMulti":"Esta foto es muy bonicaaaa"
+		"TextoMulti":""
 	}]
 }
